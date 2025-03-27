@@ -124,7 +124,11 @@ class MainActivity : ComponentActivity() {
 
                 composable("/tela5") {
                     Congratulations(
-                        onClick = { navigationController.navigate("/tela1") }
+                        onClick = {
+                            navigationController.navigate("/tela1") {
+                                popUpTo(0) { inclusive = true }
+                            }
+                        }
                     )
                 }
             }
